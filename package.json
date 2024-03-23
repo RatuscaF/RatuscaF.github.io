@@ -3,7 +3,9 @@
 	"scripts": {
 		"build": "esbuild --bundle src/main.js --outfile=www/main.js --minify",
 		"dev": "esbuild --bundle src/main.js --outfile=www/main.js --servedir=www",
-		"bundle": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\""
+		"bundle": "npm run build && mkdir -p dist && zip -r dist/game.zip www -x \"**/.DS_Store\"",
+		"stop": "pm2 kill",
+		"start": "pm2 start server.js"
 	},
 	"dependencies": {
 		"kaboom": "^3000.1.17",
